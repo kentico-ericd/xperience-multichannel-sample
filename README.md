@@ -67,7 +67,7 @@ Both editable areas also reference a widget which is available on both sites, st
 
 ### Site-specific layouts and resources, common view components
 
-Each site in this project uses its own layout file, e.g. [`_Layout.cshtml`](/SiteAWebsite/Views/Shared/_SiteALayout.cshtml). You can see in this layout it is possible to load CSS that applies to both websites, and CSS specific to only that site:
+Each site in this project uses its own layout file, e.g. [`_SiteALayout.cshtml`](/SiteAWebsite/Views/Shared/_SiteALayout.cshtml). You can see in this layout it is possible to load CSS that applies to both websites, and CSS specific to only that site:
 
 ```html
 <link rel="stylesheet" href="/_content/Common/Styles/common.css" />
