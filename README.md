@@ -29,7 +29,7 @@ To host this sample application on IIS, first publish the `MainApp.csproj` proje
 dotnet publish MainApp.csproj -o publish
 ```
 
-In IIS, create a single website which will host both channels. Add bindings to the site for your two website channels. Below, localhost:1001 is for SiteA and localhost:1002 is for SiteB:
+In IIS, create a single website which will host both channels which points to the published folder. Add bindings to the site for your two website channels. Below, localhost:1001 is for SiteA and localhost:1002 is for SiteB:
 
 ![IIS bindings](/img/bindings.png)
 
