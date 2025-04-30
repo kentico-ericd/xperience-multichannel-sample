@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <Compile Remove="Common\**" />
+    <Compile Remove="publish\**" />
+    <Compile Remove="SiteAWebsite\**" />
+    <Compile Remove="SiteBWebsite\**" />
+    <Content Remove="Common\**" />
+    <Content Remove="publish\**" />
+    <Content Remove="SiteAWebsite\**" />
+    <Content Remove="SiteBWebsite\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <EmbeddedResource Remove="publish\**" />
+    <EmbeddedResource Remove="SiteAWebsite\**" />
+    <EmbeddedResource Remove="SiteBWebsite\**" />
+    <None Remove="Common\**" />
+    <None Remove="publish\**" />
+    <None Remove="SiteAWebsite\**" />
+    <None Remove="SiteBWebsite\**" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="kentico.xperience.admin" Version="30.4.0" />
+    <PackageReference Include="kentico.xperience.azurestorage" Version="30.4.0" />
+    <PackageReference Include="kentico.xperience.imageprocessing" Version="30.4.0" />
+    <PackageReference Include="kentico.xperience.webapp" Version="30.4.0" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="Common\Common.csproj" />
+    <ProjectReference Include="SiteAWebsite\SiteAWebsite.csproj" />
+    <ProjectReference Include="SiteBWebsite\SiteBWebsite.csproj" />
+  </ItemGroup>
+	
+</Project>

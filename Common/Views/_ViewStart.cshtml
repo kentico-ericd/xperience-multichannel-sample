@@ -1,0 +1,18 @@
+﻿@using CMS.ContentEngine;
+@using CMS.DataEngine;
+@using CMS.Websites;
+@using CMS.Websites.Routing;
+@using Common;
+
+@inject IWebsiteChannelContext websiteChannelContext
+
+@{
+    if (string.Equals(websiteChannelContext.WebsiteChannelName, Constants.WEBSITE_A_CHANNEL_NAME, StringComparison.Ordinal))
+    {
+        Layout = "_SiteALayout";
+    }
+    else
+    {
+        Layout = "_SiteBLayout";
+    }
+}
