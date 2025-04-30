@@ -60,7 +60,7 @@ __SiteA Home page__
 __SiteB Home page__
 ```cshtml
 <editable-area area-identifier="top"
-    area-options-allowed-widgets="new string[] { CommonWidgetProperties.IDENTIFIER, SystemComponentIdentifiers.RICH_TEXT_WIDGET_IDENTIFIER, SystemComponentIdentifiers.FORM_WIDGET_IDENTIFIER }" />
+    area-options-allowed-widgets="new[] { CommonWidgetProperties.IDENTIFIER, SystemComponentIdentifiers.RICH_TEXT_WIDGET_IDENTIFIER, SystemComponentIdentifiers.FORM_WIDGET_IDENTIFIER }" />
 ```
 
 Both editable areas also reference a widget which is available on both sites, stored in the `Common` project.
