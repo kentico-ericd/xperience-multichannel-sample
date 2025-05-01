@@ -47,6 +47,8 @@ In the __Content types__ application, create the "common.home" content type, ass
 
 You can see in the [`Program.cs`](/Program.cs) that it isn't necessary to implement complex routing when hosting two website channels on the same application. This is thanks to Content-tree based routing and the `RegisterWebPageRoute` attribute, which contains the `WebsiteChannelNames` property. See [SiteAHomeController](/SiteAWebsite/Controllers/SiteAHomeController.cs) and [SiteBHomeController](/SiteBWebsite/Controllers/SiteBHomeController.cs). The proper Controller is selected automatically based on the request's domain.
 
+Just remember to use unique Controller names, or you may run into routing issues like [this one](https://community.kentico.com/q-and-a/q/multiple-endpoints-matched-multiple-sites-razor-class-libraries-fd039a98)!
+
 ### Common and site-specific widgets
 
 The `SiteAWebsite` project contains the code for a widget meant only for that website. However, because `MainApp` references both website RCLs, SiteB will still "see" the widget and use it in the page builder. To restrict widget usage, you must set the [allowed widgets](https://docs.kentico.com/developers-and-admins/development/reference-tag-helpers#editable-area) for your zones:
@@ -63,7 +65,7 @@ __SiteB Home page__
     area-options-allowed-widgets="new[] { CommonWidgetProperties.IDENTIFIER, SystemComponentIdentifiers.RICH_TEXT_WIDGET_IDENTIFIER, SystemComponentIdentifiers.FORM_WIDGET_IDENTIFIER }" />
 ```
 
-Both editable areas also reference a widget which is available on both sites, stored in the `Common` project.
+Both editable areas also reference a widget which is available on both sites, stored in the `Common` project. You may find it useful to implement a service which returns the list of allowed widgets for specific pages/sites as outlined in [this article](https://community.kentico.com/blog/defining-editable-area-restrictions).
 
 ### Site-specific layouts and resources, common view components
 
